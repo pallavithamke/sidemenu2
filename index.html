@@ -1,0 +1,70 @@
+<html lang="en" ng-app="myapp" >
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Angular Material style sheet -->
+
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="node_modules/angular-material-icons/angular-material-icons.css" rel="stylesheet">
+    <link href="node_modules/angular-material/angular-material.min.css" rel="stylesheet">
+    <link href="node_modules/angular-material-sidemenu/dest/angular-material-sidemenu.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-material-icons/angular-material-icons.min.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/angular-material-sidemenu/dest/angular-material-sidemenu.js"></script>
+
+    <!-- Your application bootstrap  -->
+    <script src="js/app.js"></script>
+</head>
+<body ng-controller="indexCtrl" ng-cloak >
+
+<div layout="row">
+    <div id="projectMenue" layout="column" layout-align="start center">
+
+        <div>
+            <md-icon class="adminIcon" md-svg-icon="social:people"></md-icon>
+            <p style="font-size: 20px;margin: 6px;font-weight: 500;color: #fff;}">Welcome<br/><span style="font-size: 30px;line-height: 20px;">Admin</span></p>
+
+        </div>
+
+        <div ng-repeat="menu in subMenuList">
+            <md-button class="menuButton"  ng-click="loadDefaultPage(menu.defaultPage);">
+                <div ng-class="{activeMenu : selectedMenu === menu.defaultPage}">
+                    <md-icon md-svg-icon="{{menu.menuIcon}}" class="menuIcon"></md-icon>
+                    <p class="menuName">{{menu.menuName}}</p>
+                </div>
+            </md-button>
+        </div>
+
+    </div>
+    <div id="projectSubMenue"  class="navButton2" ng-class="{'thinMenuBand':thinMenuBand,'wideMenuBand':!thinMenuBand}">
+        <p style="font-size: 20px;margin: 6px;font-weight: 500;color: #fff;}">Welcome<br/><span style="font-size: 30px;line-height: 20px;">Admin</span></p>
+
+        <ul class="no-padding">
+            <li  class="navButton2" ng-class="{'activeSubMenu': subMenu == activeSubMenu }" ng-repeat="subMenu in subMenuList11" ui-sref="{{subMenu.subMenuLink}}" ng-click="changeTitle(subMenu);"> {{subMenu.subMenuName}}</li>
+        </ul>
+
+    </div>
+
+    <div flex style="">
+
+        <md-toolbar  style="border-radius: 0px; background-color: #009688;">
+            <h3 style="text-align: center;color: white;" flex>Angular Material Sidemenu</h3>
+        </md-toolbar>
+
+    </div>
+    <div id="projectBody">
+        <div ui-view=""></div>
+
+    </div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+.adminIcon{
+    height: 60px; width: 60px; color:white;
+}
+.menuIcon{
+    color: #fff;
+    font-size: 20px;
+    margin-top: 4px
+}
+.no-padding{
+    padding: none;
+}
+.menuButton{
+    background-color: rgba(255, 241, 241, 0.2);
+    color:#000;height: 50px;
+    padding: 0px;
+    border-radius: 5px;
+    margin: 6px 0px;
+    min-width: 60px
+}
+.menuName{
+    color: #fff;
+    font-size: 10px;
+    margin-top: -12px;
+}
+.no-padding{
+    padding: 0px;
+}
+#projectMenue{
+    background-color: #009688;
+    padding: 10px;
+    overflow: auto;
+}
+
+.navButton2{
+    /*width: 20px;*/
+    text-align: left;
+    border-bottom: 1px solid #05717b;
+    line-height: 35px;
+    padding: 5px;
+    margin: 0px;
+    font-weight: 600;
+    list-style-type: none;
+    color: #e8edef;
+    outline: none;
+}
+.activeMenu{
+    background-color: #02454c;
+    color : #fff;
+}
+.activeSubMenu{
+    background-color: #015c65;
+    color : #fff;
+}
+.activeSubMenu:hover{
+    background-color: #015c65;
+}
+#projectSubMenue{
+    background-color: rgba(105, 105, 105, 0.93);
+    overflow: auto;
+}
+
+#projectBody{
+    overflow: auto;
+}
